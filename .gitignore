@@ -1,0 +1,27 @@
+# media and heavy files stay local
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.blend
+*.blend1
+*.exr
+# keys
+.env
+.env.*
+# python and OS noise
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# work files of the repo build
+work-brief.md
