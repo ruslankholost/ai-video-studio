@@ -122,6 +122,8 @@ Output:
 
 08.46 Generate at the target resolution when the scene is dynamic (chase, fight, crowd), because physics differs between 480p and 1080p. Static or simple scenes: cheap 480p draft first, then finish the same take, not a new generation (A5, C6). Part of the "cartoon" look is upsampling of soft low-resolution output. Animating a photo without upscale loses 15 to 20 percent of quality.
 
+08.46a SeedVR video upscale settings that work (2026-11-23): Noise Scale 0 (higher values smear), Upscale Mode Target, target 2160p, output ProRes 4444 (.mov), quality maximum, preset balanced. The output can reach several GB and take hours; long files fail, so upscale in pieces of 10 to 15 s (cutting per shot does this naturally). On pure black areas SeedVR adds noise: check dark shots. Local alternative with no credits: SeedVR2 x2 in WanGP on a 12 GB GPU runs at about 5.5 s per 480p frame, so a 30 s video at 24 fps (720 frames) takes a little over an hour.
+
 08.47 Detail and skin enhancers only after video generation (for final styles and posters), not before. Too clean references make plastic in the video model. For a soft picture, raise detail after the video.
 
 08.48 "Lens effect on accents" appears in one guide line without parameters. Do not invent what it means. Related tricks with parameters: keyframed zoom in the editor (08.58) and halation and bloom on bright sources.

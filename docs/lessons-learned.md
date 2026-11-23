@@ -12,6 +12,7 @@ Where a rule is a taste choice it says "default": the user may change it.
 5. **Upscale cheaply by default.** Generate drafts at 480p and upscale only the pieces that made the final cut. Use a local upscaler if the computer has a good GPU; paid upscaling only for a clip that needs it, with its own "yes".
 6. **One video, not a season.** If an idea has several heroes or situations, they all go into one video. Don't stretch one plot into a series.
 
+
 ## Idea and story
 7. **Stories come from real life, not from the head.** Take a real situation the user lived or saw, and give every idea two versions: the clear one and the unexpected one.
 8. **Show concepts as options:** at least three, each with a different story engine, plus your pick with one reason. If a business is advertised, it must drive the plot: cut the business scenes and the story should fall apart.
@@ -30,16 +31,26 @@ Where a rule is a taste choice it says "default": the user may change it.
 19. **Props and costumes as in real life.** No invented gadgets (police uniforms have no lights on them; officers carry flashlights).
 20. **Check every frame at full size, and start frames in pairs,** before the user sees them: hands, doubles, direction of travel, same street or seat, real sizes.
 21. **Overlays are designed graphics.** Titles, HUDs and badges drawn with code look cheap. Generate the graphic, show one sample frame first, then animate.
+21a. **"Input may contain a real person" moderation** (2026-11-23). Photoreal close-up frames used as references can trip it. Pass only the character cards plus the previz, and keep the scene description in the prompt.
+21b. **Let the user steer the previz camera with a phone** (2026-11-23) before the paid run: a phone camera-tracking app records a handheld take straight into Blender. If takes are limited, extract the hand-motion residuals from one take and reuse them as handheld noise on other shots.
 
 ## Pace and edit
 22. **No empty seconds.** Nobody walks in silence, nobody enters, nobody stares for long. Every shot starts with a line or a hit.
 23. **Dense plot:** 15-20 events per video, a new event every 2-3 s, shots of 1.5-2.5 s, plus 3-4 long shots. An event means the situation changed; another crop of the same moment is not an event. Two beats in a row with the same feeling merge into one. Inside one place: wide → detail → reaction, each showing a new moment.
+
+24a. **Check the out-point of every shot frame by frame** (2026-11-23). After the action ends, the video model often snaps back to its start frame: a car that already drove off stands in front of the camera again. Look at every frame of the last half second of each shot, not a 2 fps sample.
+24b. **Take in-points from the generated clip, not from the previz timing** (2026-11-23). The model plays actions earlier than the previz and can move cuts. Find the real cuts with scene detection and the real hits from sound onsets in each clip, then cut there.
 
 ## Sound
 24. **One voice per character** for the whole video.
 25. **Move the voice only as whole lines, at speed 1.0.** Don't cut a phrase into pieces or stretch it for lip sync: put the first word on the frame where the mouth opens. Keep word tails; phrases never cut off.
 26. **Music runs under the whole video and ducks under the voice.** Don't switch it off on every line. One hard stop at most, on the turn.
 27. **Captions: one phrase on one line, one caption on screen.** Don't save a subtitle file next to the mp4 with the same name, or players show the captions twice.
+
+27a. **Pick the song window where the vocals are** (2026-11-23). Map where the singing is before choosing the window; an instrumental stretch loses the vibe. To quiet a scene, muffle the music (low-pass and lower volume) instead of cutting it.
+27b. **A line keeps its lips** (2026-11-23). If the speaker is on screen, the line sits under their mouth. If the clip's own take is glitchy, a cleaner take of the same line from an earlier draft can replace it when its foley (paper slap, tap) matches what happens on screen. A line moved over another shot (L-cut) must be clean: tagged TTS or a separated vocal, never a raw slice of a clip, because the slice brings the clip's background sounds. Mute the clip's own sound under it.
+27c. **Shouts come from the character in frame, short and on the action** (2026-11-23). The model's own voices come out calm; use tagged TTS (for example `[shouting, alarmed]`), put it on the frame where the character reacts, and duck the music under it.
+27d. **Loudness: static gain, not one-pass normalisation** (2026-11-23). Measure integrated loudness, apply one gain to -14 LUFS and a limiter. One-pass loudnorm squashes hits and shouts.
 
 ## Working with the agent
 28. **Study the material in full;** don't drop parts as "extra". Keep principles unchanged until the user changes them.

@@ -132,6 +132,8 @@ Only what does not depend on the model. Model-specific limits and syntax are in 
 
 06.47 **Cheap first: a 480p draft, then finishing.** "Only a draft can be taken to 1080p, and it will be the same clip, not a new take": order the draft as a draft, not just at low resolution. If you do not like it, fix the prompt and make a new draft. If you do, finish the draft. Resolution of the draft question: static and simple scenes get a cheap draft or a 4-5 s test first, then the same clip is finished. Dynamic scenes (chase, fight, crowd) may behave differently at 480p and at full resolution: test one dynamic scene at both before relying on drafts for such scenes. Budget for both cases.
 
+06.47a **Seedance reference drafts** (2026-11-23): length Auto with the length written in the prompt (not a fixed 5, 10 or 25 s), sound on, 2 to 3 drafts before any finish. The order of numbered references in the prompt must match the order of the attached files exactly.
+
 06.48 **A paid generation runs only after the user's "ok".** Show the model, mode, frame format, length, resolution, with or without sound, files and roles, price (from `estimate_video_cost`) and the prompt. An "ok" for one run does not carry to the next. Cheap picture first, expensive video second: a 3x3 storyboard in one call, and no generation before the "ok".
 
 06.49 **Regenerate only the bad shot, not the whole video:** "A bad shot: regenerate only it." Generation slips (people walking backwards) are regenerated. If the network made a mistake (through a wall, through a door), "that shot is garbage, fix the prompt".
