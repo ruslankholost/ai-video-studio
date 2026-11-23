@@ -272,6 +272,11 @@ General:
 - [ ] What is dangerous for the model (mirrors, pure POV, complex reflections) is identified and the scenes are simplified.
 
 The stage closes only on the user's "ok".
+- [ ] Storyboard has a shot-size column and neighbouring shots cut by size (02.68); wide and extreme wide shots exist (02.69).
+- [ ] Every shot has its light with the shooting side (`backlight`, shadow side) and a lens with aperture up to 135 mm (02.70, 02.71).
+- [ ] Palette of 1-3 main colours with one accent that leads to the product; three planes, no clutter, a telling object (02.72, 02.73).
+- [ ] Three anchor points in seconds: question around second 5, turn in the middle, climax with the product 5 s before the end (02.76).
+- [ ] Camera and subject move in every shot; scenes of 1-3 s (02.75).
 
 ## Common mistakes
 

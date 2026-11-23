@@ -58,7 +58,7 @@ The user's latest decision wins. When they change a rule, replace the old line i
 - `docs/higgsfield.md`: how to generate through Higgsfield: models, prices, uploads, downloads.
 - `templates/`: prompt templates for each model, the storyboard, the project folder, the progress file.
 - `scripts/check_prompt.py`: checks a Seedance video prompt before it is sent.
-- `.claude/skills/video-studio/`: the step-by-step loop. `.claude/skills/blender-previz/`: building the previz in Blender.
+- `.claude/skills/video-studio/`: the step-by-step loop. `.claude/skills/blender-previz/`: building the previz in Blender. `.claude/skills/ai-director/`: the director's method for cinematic pieces and spec ads (concept test, look bible, master prompt, greybox, Seedance prompt, review).
 - `projects/`: one folder per video.
 
 ## Starting a new video

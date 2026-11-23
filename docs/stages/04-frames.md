@@ -249,6 +249,8 @@ Per frame:
 - [ ] The price message listed the model, the number of jobs, the credits and the checklist, and the user said "yes".
 
 The stage closes only after the user's "ok".
+- [ ] Frame quality (02.70-02.74): light from the shadow side plus a back light; lens and aperture named; 1-3 main colours and the accent match the neighbouring frames; three planes; no clutter; one centre of attention.
+- [ ] None of the defects AI makes on its own: dead or grey-green skin, plastic highlights, a glowing outline around the figure and hair, a stock tear on the cheek, flat light without shadows.
 
 ## Common mistakes
 

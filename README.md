@@ -35,6 +35,7 @@ Point the agent at this folder. It reads `AGENTS.md` first. Ask it to follow `.c
 - **Laws.** `docs/laws.md`: 48 rules the whole process rests on.
 - **Lessons.** `docs/lessons-learned.md`: rules learned on real videos. Add your own; your latest decision always wins.
 - **Templates.** `templates/`: prompt formulas for each model, storyboard, project folder, progress file.
+- **Skills.** `.claude/skills/`: `video-studio` (the step-by-step loop), `blender-previz` (previz in Blender with check scripts), `ai-director` (director's method for cinematic pieces and spec ads).
 - **Projects.** `projects/NN-word/`: one folder per video, with a `progress.md` that tells any new session where you stopped.
 
 ## Money

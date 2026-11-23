@@ -221,6 +221,7 @@ Long forms (brief card, premise row, checklist, six templates, eleven filters, g
 - [ ] 1-3 finalists were shown without "selling" comments.
 
 The stage closes only on the user's "ok".
+- [ ] The three anchor points fit the idea: a question around second 5, a turn in the middle, the climax with the product 5 s before the end; the idea has one telling object (02.73, 02.76).
 
 ## Common mistakes
 

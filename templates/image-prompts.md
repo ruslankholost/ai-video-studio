@@ -47,7 +47,7 @@ Light recipes:
 | Beauty | soft frontal light, beauty dish above, even fill, soft shadows under the chin |
 | Documentary | available light, mixed warm lamp and cool street, unposed |
 | Window interior | soft diffused window light from the left, falloff into shadow, warm balance |
-| Sunset | low warm sun, long shadows, amber highlights, rim light on the edge |
+| Sunset | low warm sun, long shadows, amber highlights, backlight on the edge (for people write `backlight`, not rim light: it makes a glowing outline) |
 | Neon night | mixed neon, blue and magenta reflections on skin, wet asphalt reflecting signs |
 
 Style block starters:

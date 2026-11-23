@@ -360,6 +360,9 @@ Show the user only what passed this list. The stage is closed by the user's "ok"
 - [ ] Export matches the platform: mp4 H.264 yuv420p, faststart; cover; post text.
 - [ ] Copies: md5 differs, all have sound, none larger than the source, the contact sheet was viewed, and the user was told there is no guarantee.
 - [ ] Every paid step (generation, upscale) ran only after a "yes" on that step with its cost.
+- [ ] Finished-video defect check on a frame sheet: no dead or grey-green skin, plastic highlights or glowing outlines; colour does not jump between shots; no more than three main colours; no lettering, extra people or clutter in the background; not only close-ups in a row; no shots without motion; the picture is not "acid".
+- [ ] Cuts by shot size: no neighbouring or too-distant sizes side by side without action across the cut; no visible jump on a cut (02.68).
+- [ ] The climax with the product sits about 5 s before the end, a question by second 5, a turn in the middle (02.76).
 
 ## Common mistakes
 

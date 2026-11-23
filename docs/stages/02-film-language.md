@@ -162,6 +162,17 @@ Output: in `storyboard.md` each segment has a described shot (6 elements, princi
 
 02.67. Look and tone defaults: by default the camera is clean, and special moves (slow motion up to 3 s, wide 14-24 mm, snap zoom, one dolly zoom per video) are for gags and peaks and each is marked in the storyboard. The look is chosen by genre before the first generation and stays one inside a video (noir and heist on film stock, everyday comedy in phone-camera style). Comedy tone comes from acting and the gag, big readable funny expressions, real light and real colors, not from asking an image model for "comedy" and not from bloodshot eyes. Absurd without effects: nothing comes alive, flies or glows, strange characters live in ordinary life. Frames are not "cute" or glossy: compare each frame with the approved character card and write the rough look as its own prompt paragraph. Pace guide from measuring leader videos: a new place or event every 3-5 s, inside a place wide, detail, reaction for 0.3-0.9 s each, one or two holds of 2.5-5.7 s. (default; the user may change it)
 
+### Frame and cut quality (added 2026-11-23, from a lecture on AI-artist frame quality, own words)
+02.68. **Cut by shot size.** There are six sizes: extreme wide, wide, medium wide, medium, close-up, detail. Neighbouring sizes do not cut well together, and sizes too far apart do not either. Pairs that work: extreme wide with medium wide, wide with medium. A detail of the room or landscape cuts with almost any shot of a person. Action that continues across the cut hides the jump.
+02.69. **Wide and extreme wide shots are required,** otherwise there is no world. In a landscape frame (16:9, 4:3) the composition starts from a medium wide; in a vertical frame from a wide. Keep the close-up for the product.
+02.70. **Light: a back light almost always, written as one word, `backlight`.** "Rim light" and "glowing outline" make an unnatural glowing contour around people and hair. Shoot from the shadow side: light falls on the subject from one side, the camera stands on the other. A lamp or window in frame (practical light) explains where the light comes from and often gives the back light too. Build the light on close and medium shots.
+02.71. **Name the lens and aperture in every prompt,** or the model falls back to an average 35 mm. Lenses longer than 135 mm do not behave like real lenses in AI. A blurred background is not a goal; the background works for the scene.
+02.72. **Colour: 1-3 main colours per video, better 1-2** (black and white do not count). One accent colour on a grey or muted background holds attention until the final product shot. Warm against cold (warm skin on a cold wall). Set colour explicitly, the model averages it to neutral; it must not jump from shot to shot.
+02.73. **Set design: three planes** (far, middle, near; a soft foreground frames the subject), no clutter (random objects, signs and lettering, extra people), every prop works for the story. One telling object can carry the meaning of a whole scene.
+02.74. **One centre of attention per frame** (eyes, text, a bright spot, the accent colour); symmetry slightly imperfect; the angle and the empty space around the subject carry the emotion.
+02.75. **Motion in every shot, ideally both camera and subject,** or the video becomes a set of animated photos. A static opening with light motion inside the frame reads well; drop zooms or keep them barely visible. Scenes of 1-3 seconds.
+02.76. **Three anchor points in time:** around second 5 the viewer asks "what is going on?", the middle holds a turn, and 5 seconds before the end comes the climax; in an ad that is where the product shows.
+
 ## Workflow
 
 The order of application:
@@ -266,6 +277,16 @@ Film look additions:
 - [ ] A symptom, cause, cure table for film look is in `templates/film-language.md` if a frame fails.
 
 The stage closes only on the user's "ok".
+
+Frame and cut check (02.68-02.76):
+- [ ] Neighbouring shots cut by size: no neighbouring or too-distant sizes side by side without action across the cut.
+- [ ] Wide and extreme wide shots exist, not only close-ups; the close-up is kept for the product.
+- [ ] Every shot names its light and the side it is shot from (shadow side); the back light is written as `backlight`.
+- [ ] Every prompt names lens and aperture; longer than 135 mm only on purpose.
+- [ ] Palette of 1-3 main colours, one accent leads the eye to the product shot; colour stays the same shot to shot.
+- [ ] Three planes in the frame, no clutter (signs, lettering, extra people, random objects); one centre of attention.
+- [ ] Camera and subject move in every shot.
+- [ ] A question around second 5, a turn in the middle, the climax 5 s before the end (in an ad, the product).
 
 ## Common mistakes
 

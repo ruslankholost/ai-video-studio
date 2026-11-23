@@ -236,7 +236,7 @@ Seedance 2.5 JSON skeleton (the full field list is in `templates/video-prompt-se
 Our own multi-shot example in English, for the shape of a shot (not a Seedance JSON):
 ```
 @Image1 is the character reference: keep the exact coat and face in every shot, no face drift.
-[0s-2s] WIDE SHOT. The cat walks to the rose and touches a petal with its nose. Camera static, eye level, wide lens. Backlight rims the fur.
+[0s-2s] WIDE SHOT. The cat walks to the rose and touches a petal with its nose. Camera static, eye level, wide lens. Backlight on the fur.
 [2s-4s] CLOSE-UP on the face. One slow deep inhale, eyes closing, whiskers forward. Camera static, 85mm look, shallow depth of field.
 [4s-6s] WIDE SHOT. The cat hisses at the rose, swats it, petals scatter into the sunbeam.
 AUDIO per shot: room tone, petal rustle, a short hiss at the end. No music.
@@ -272,6 +272,7 @@ Morphing: first frame, second frame and one of ten action prompts (liquid, parti
 - [ ] Sound was not checked by ear unless it was listened to, and that is stated honestly.
 
 The stage closes only with the user's "ok".
+- [ ] Every shot names lens and aperture (up to 135 mm), the back light as `backlight` (not rim light, not glowing outline), motion of both camera and subject; the video's 1-3 colours and accent are named (02.70-02.72, 02.75).
 
 ## Common mistakes
 
