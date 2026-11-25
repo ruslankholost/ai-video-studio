@@ -94,8 +94,8 @@ Stages: 01.67, 04.53, 06.48, 07.81, 08.61, 08.71, 08.82, 09.53, 09.57
 
 ## III. Camera and video
 
-**21. The camera is the hardest part, and it is caught in previz, not in generation.**
-Why: a prompt hardly holds the camera. In previz (Blender) the video is visible before generation and is fixed in words for free, and the video model receives finished motion, paths and speed.
+**21. The camera is the hardest part. A long take or a hard move is caught in previz; a simple move is held by the start frame and the prompt.**
+Why: a prompt hardly holds a long or complex camera. In previz (Blender) the video is visible before generation and is fixed in words for free, and the video model receives finished motion, paths and speed. Short shots with a static camera, a slow push-in or a pan do not need it (stage 05, "When this stage is needed").
 Stages: 06.13, 05.1, 05.2, 05.8, 05.15, 05.16, 02.40, 01.72
 
 **22. The camera is always set and explicit: the angle first, the type of movement named.**

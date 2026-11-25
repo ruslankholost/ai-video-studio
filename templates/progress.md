@@ -11,7 +11,7 @@ A new session starts from this file (skill `video-studio`). Update it after ever
 | 01 | Preproduction | | |
 | 03 | Characters and references | | |
 | 04 | Frames | | |
-| 05 | Previz and camera | | |
+| 05 | Previz and camera (skip if no long take and no failed camera) | | |
 | 06 | Video | | |
 | 07 | Sound and voice | | |
 | 08 | Post | | |

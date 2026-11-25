@@ -1,6 +1,6 @@
 # 06 Video
 
-This stage turns the finished frames, reference cards, storyboard and previz into video clips. The method in one paragraph: Seedance 2.5 (`seedance_2_5` on Higgsfield, omni reference) is the main model. The previz montage from stage 05 goes in as a video reference, `@Video1`, and gives only camera movement, positions, paths and timing, never looks, faces or hands. Every input image has a written role. The prompt is the Chinese JSON from `templates/video-prompt-seedance.md`, with the camera (机位) written before the picture (画面) and the acting (表演) written through the body for every shot, integer-second timecodes, at most 5000 characters, checked with `scripts/check_prompt.py`. Work in batches of 10-15 s (Seedance 2.5 takes up to 30 s), draft at 480p, check a frame grid side by side with the previz before assembly, regenerate only the bad shots, and upscale at the end. Other models (Kling, MiniMax, Omni) use the same formula with different syntax. Voice and music belong to stage 07.
+This stage turns the finished frames, reference cards, storyboard and, when there is one, the previz into video clips. The method in one paragraph: Seedance 2.5 (`seedance_2_5` on Higgsfield, omni reference) is the main model. When stage 05 built a previz (a long take, or a camera that failed twice), it goes in as a video reference, `@Video1`, and gives only camera movement, positions, paths and timing, never looks, faces or hands; otherwise the start frame and the prompt carry the camera. Every input image has a written role. The prompt is the Chinese JSON from `templates/video-prompt-seedance.md`, with the camera (机位) written before the picture (画面) and the acting (表演) written through the body for every shot, integer-second timecodes, at most 5000 characters, checked with `scripts/check_prompt.py`. Work in batches of 10-15 s (Seedance 2.5 takes up to 30 s), draft at 480p, check a frame grid against the start frames and storyboard (and the previz, if any) before assembly, regenerate only the bad shots, and upscale at the end. Other models (Kling, MiniMax, Omni) use the same formula with different syntax. Voice and music belong to stage 07.
 
 A video prompt is built from one formula for any model: inputs, anchors, camera, object and order, sound and dialogue, environment and negative. Models change, the formula stays.
 
@@ -194,26 +194,26 @@ These come from reviewing finished clips, not from lessons.
 
 ### K. The lesson that fixed the method
 
-06.74 **Do not generate every shot as a separate short clip from its start frame only, with no previz and free-text prompts.** This was tried, and it failed. Gags do not work: cars do not brake, people do not turn, hits do not land. The cut looks like a slideshow of unrelated pictures. The fix is the method of this stage: the previz as `@Video1` for camera, positions, paths and timing, written roles for every image, the JSON prompt with camera and acting in every shot, batches of 10-15 s. Do not swap the model or skip the previz to save credits. A cheaper model without the previz costs more in the end, because every failed gag is paid for and still unusable.
+06.74 **Do not generate every shot as a separate short clip on a cheaper model from its start frame only, with free-text prompts and no character cards.** This was tried, and it failed. Gags do not work: cars do not brake, people do not turn, hits do not land. The cut looks like a slideshow of unrelated pictures. The fix is the method of this stage: the start frame and the character cards with written roles, the JSON prompt with camera and acting in every shot, batches of 10-15 s, and the previz as `@Video1` where stage 05 calls for one. Do not swap the model to save credits. A cheaper model costs more in the end, because every failed gag is paid for and still unusable.
 
 ## Workflow
 
 The Seedance 2.5 path. Other models follow the same steps, with their own template.
 
-1. **Check the input.** Roles of the files, frame format, a storyboard with angle, lens, movement, who does what, sound. A start frame per scene (stage 04) and a previz montage (stage 05). If there is no previz and the camera matters, go back and make one (06.13). Do not start from start frames alone (06.74).
+1. **Check the input.** Roles of the files, frame format, a storyboard with angle, lens, movement, who does what, sound. A start frame per scene (stage 04) and the character cards (stage 03). A previz montage only if stage 05 called for one: a long take without cuts, or a camera that already failed twice (06.13). Do not start from start frames alone with free-text prompts (06.74).
 2. **Choose the input mode (the switch):**
    - text only (text to video): no image, describe the scene completely like a photo prompt, include all blocks;
    - one image (image to video): the scene is in the frame, "Scene" holds only anchors, the focus is camera and movement;
    - two frames, start and end: describe how the first becomes the second;
    - several images (multi-reference): the "Inputs" block is the main one and each image gets a role.
-   For the main method the mode is omni reference: `start_image`, `image_references`, `video_references` (the previz), and optionally `audio_references`. If the host rejects a start frame together with a video reference, pass the start frame as an image reference and name it in the prompt (`@Image1 is the first frame, keep its look, people and faces`).
+   For the main method the mode is omni reference: `start_image`, `image_references`, `video_references` (the previz, when there is one), and optionally `audio_references`. If the host rejects a start frame together with a video reference, pass the start frame as an image reference and name it in the prompt (`@Image1 is the first frame, keep its look, people and faces`).
 3. **Choose the model.** Default `seedance_2_5`. Use 06.63 for other cases. Run `models_explore` to confirm the current ids and limits, and open the matching template.
 4. **Upload the files.** Use `media_upload` for the previz video, frames and cards. Keep a table "tag, file, role, what we take, what we do NOT take". The previz role line is: `@Video1` gives only camera movement, positions, paths and timing, never looks, faces or hands (`templates/previz-in-video-prompt.md`). Every image has a written role (06.4, 06.5).
 5. **Write the prompt.** Ask the agent for the Chinese JSON from `templates/video-prompt-seedance.md`. For every shot: camera (机位) first, then picture (画面), then acting (表演) written through the body (06.11, 06.17), integer-second timecodes with no gaps (06.23), sound inside the shot (06.30), lines verbatim in quotes (06.31), a short concrete negative (06.36). Keep it to 5000 characters at most. Split into batches of 10-15 s (06.27) and cut a longer video at natural seams with `@video1` continuation (06.26).
 6. **Check the prompt.** Run `python scripts/check_prompt.py <prompt.json>`. Fix every error it reports and read the Chinese text yourself, because a typo in a character is not caught (06.43).
 7. **Show the user the price message.** Model, mode, frame format, length, resolution (480p draft), with or without sound, the files and roles, the number of jobs and the credits from `estimate_video_cost`, the prompt, and the "Check before ok" list with yes/no per item. Name any move that is not the method (for example "no previz" or "another model") as a deviation. Wait for the user's "yes" for this exact run. (user's ok)
 8. **Generate the draft.** 480p batches via `generate_video` (`generate_video_batch` for several), then `jobs_wait`. Drafts only, no 720p or 1080p yet (06.47).
-9. **Check against the previz.** Make a frame grid of the draft and put it side by side with a frame grid of the previz. Compare the start, middle and end of every shot: camera direction, object placement, order of foreground things passing, face drift, room drift, scale drift. Check hands, feet, text and cuts (06.52, 06.65, 06.70). Listen to the track (06.66).
+9. **Check against the frames and the previz.** Make a frame grid of the draft and put it side by side with the start frames and the storyboard (and a frame grid of the previz, if there is one). Compare the start, middle and end of every shot: camera direction, object placement, order of foreground things passing, face drift, room drift, scale drift. Check hands, feet, text and cuts (06.52, 06.65, 06.70). Listen to the track (06.66).
 10. **Regenerate only the bad shots (06.49).** Fix the prompt in place in `prompts.md` and regenerate the batch with the fix, collecting all edits in one message (06.50). If the same shot fails twice, fix the previz, not the prompt. Save the accepted version together with its references.
 11. **Finish at the end.** Finish accepted drafts or run the upscale pass (`bytedance_video_upscale`, `topaz_video` or a local upscaler), one clip at a time, before grain and grade (06.53). Price check and "yes" again before paid upscale. (user's ok)
 12. **Save and log.** Clips in `video/`, rejects in `drafts/`, prompts in `prompts.md`. The user watches and gives the stage "ok". (user's ok)
@@ -257,7 +257,7 @@ Morphing: first frame, second frame and one of ten action prompts (liquid, parti
 
 ## Check before "ok"
 
-- [ ] The method is followed: previz as `@Video1` (camera, positions, paths and timing only), a role for every image, the Chinese JSON, drafts at 480p. If any item differs, it is named to the user as a deviation, not hidden.
+- [ ] The method is followed: start frame and character cards, previz as `@Video1` (camera, positions, paths and timing only) where stage 05 called for one, a role for every image, the Chinese JSON, drafts at 480p. If any item differs, it is named to the user as a deviation, not hidden.
 - [ ] The roles of all inputs are written (what we take, what we do not take).
 - [ ] The camera is set in every shot, the angle comes first, and shake or stabilisation is named.
 - [ ] One shot, one action, one camera move; timecodes in whole seconds run back to back with no gaps and cover the whole running time.
@@ -267,7 +267,7 @@ Morphing: first frame, second frame and one of ten action prompts (liquid, parti
 - [ ] Positive descriptions instead of bans; the negative only specific (or by the model's rule).
 - [ ] The character limit counted by code (at most 5000 for Seedance 2.5); the prompt is whole; no signature, brands or instruction words for the model; `scripts/check_prompt.py` was run and passed.
 - [ ] The price message listed model, mode, format, length, resolution, price, prompt, and the user's "ok" is for this run.
-- [ ] The 480p draft was viewed on a frame grid side by side with the previz (style, direction of movement, faces, hands, text), and only the bad shots were regenerated.
+- [ ] The 480p draft was viewed on a frame grid side by side with the frames and storyboard, and the previz if any (style, direction of movement, faces, hands, text), and only the bad shots were regenerated.
 - [ ] Upscale is done at the end and before effects; clips and `prompts.md` are in the project; rejects are in `drafts/`.
 - [ ] Sound was not checked by ear unless it was listened to, and that is stated honestly.
 
@@ -295,8 +295,8 @@ What the lessons call mistakes:
 - A voice in the generation together with the 3D previz: overload.
 - Feeding moodboard images straight as a reference: the image model may take even someone else's face.
 - Observed in examples: one continuous shot requested but hard cuts received; a light jump between shots (night, then day); flickering hands and fingers on fast moves; unreadable text on the ground; weak lip sync on a short line; scale shift between shots; a lightning flash covering a morph cut; small non-physics (hair and a towel hanging in the air).
-- **Generating each shot as a separate short clip from its start frame, with no previz and free-text prompts (06.74).**
-- Swapping the model or skipping the previz to save credits.
+- **Generating each shot as a separate short clip from its start frame only, with free-text prompts and no character cards (06.74).**
+- Swapping the model to save credits, or skipping the previz on a long take or a camera that already failed twice.
 
 ## Tools
 

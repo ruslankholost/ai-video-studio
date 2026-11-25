@@ -43,7 +43,7 @@ Check `models_explore` for anything newer before you start a project.
 
 ## Rules that save credits
 - **Draft at 480p, final only for what made the cut.** Never plan a paid 1080p pass for every clip.
-- **One chunk first.** For a video in several chunks, generate the first, check it against the previz, then ask for the rest.
+- **One chunk first.** For a video in several chunks, generate the first, check it against the storyboard (and the previz, if there is one), then ask for the rest.
 - **Regenerate only the bad shot,** never the whole video.
-- **Don't change the model to save credits.** A cheaper model that ignores the previz costs more in retakes. If you think a cheaper route works, test it on the hardest shot, not the easiest, and only with a "yes".
+- **Don't change the model to save credits.** A cheaper model that ignores the references costs more in retakes. If you think a cheaper route works, test it on the hardest shot, not the easiest, and only with a "yes".
 - **Never use free or "unlim" generations unless the user asks.** If Higgsfield returns a question about which balance to use, ask the user.

@@ -27,8 +27,8 @@ Build ONE hero frame until light, lens, shadow, blur and framing are right, then
 ## 3. References before motion
 Character sheet (front, back, face close-up), prop sheet, environment still with the character in it, then a texture pass, then a separate lighting pass, all as stills (stages 03 and 04). Coverage (close-up, two-shot, wide) is generated from the master frame keeping light and palette. References hold identity better than prose; one reference per element.
 
-## 4. Blender greybox = camera and timing reference
-Use the `blender-previz` skill (stage 05).
+## 4. Blender greybox = camera and timing reference, when needed
+Only for a long take without cuts, or a camera move the prompt failed to hold twice (stage 05); then use the `blender-previz` skill. Short shots with simple moves are held by the start frame, the cards and the prompt.
 - Render each shot as its own continuous clip, 3-8 s, at most 720p H.264, no cuts inside a reference. Check the current host limits on Higgsfield before uploading.
 - Keep a library of named camera moves (push-in, orbit, whip-around, overtake); write each as `<move>. Movement / Speed / Framing / End` (02.66) and paste it into the camera block of the video prompt.
 - One continuous greybox camera move can carry several worlds: a 30 s one-take that trucks through connected rooms, each a different world, with one consistent character. The split-screen breakdown (reference board, generation, greybox) is a post of its own.

@@ -36,8 +36,8 @@ Order of authority is in `AGENTS.md`: the user's latest decision (`docs/lessons-
 3. Fix what was found or show it to the user. Only then ask for the "ok". An "ok" covers one stage and does not carry over.
 
 ## Keep in mind
-- Generate only through the method in the stage document. Video is Seedance 2.5 with the previz as @Video1 and the template prompt (stage 06). A shortcut that saves credits but skips the method wastes more credits later.
+- Generate only through the method in the stage document. Video is Seedance 2.5 with the start frame, the character cards and the template prompt (stage 06), plus the previz as @Video1 when stage 05 calls for one. A shortcut that saves credits but skips the method wastes more credits later.
 - Check every image at full size before showing it, and check start frames in pairs (same place, same direction, same props, real sizes, hands, no doubles).
 - Before the money stages, test the ending on paper: if the last shot is not a turn, the video will not be watched to the end, however well it is generated.
 - Every "don't do that" from the user goes into `docs/lessons-learned.md` (with the date) and into the project's `experience.md`.
-- Previz: skill `blender-previz`. If Blender is not installed, say so and offer to install it; don't skip the previz silently.
+- Previz: only for a long take without cuts, or a camera the prompt failed to hold on the same shot twice (stage 05). Then use skill `blender-previz`; if Blender is not installed, say so and offer to install it. When stage 05 is skipped, write why in `progress.md`.

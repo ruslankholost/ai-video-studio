@@ -128,7 +128,7 @@ Also settled while checking the laws:
 
 **B6. Previz render.** A fast gray render without shadows. Turn shadows on only if a test shows the model confuses depth. (Default; the user may change it.)
 
-**B7. Order: images before previz or previz first.** Reference pictures (faces, locations, objects, setting frames), then a dummy previz built for them, then video. Stage order stays 03, 04, 05, 06. A weak idea is still killed earlier, in pre-production: script and a 3 by 3 storyboard with "ok" before any generation. (Default; the user may change it.)
+**B7. Order: images before previz or previz first.** Reference pictures (faces, locations, objects, setting frames), then, only if stage 05 calls for it, a dummy previz built for them, then video. Stage order stays 03, 04, 05, 06; 05 is skipped when there is no long take and no failed camera. A weak idea is still killed earlier, in pre-production: script and a 3 by 3 storyboard with "ok" before any generation. (Default; the user may change it.)
 
 **B8. Skin retouching.** No retouching. Skin stays alive on reference cards and in scenes (`no beautification`). Retouch a client's double only when the client asks. (Default; the user may change it.)
 

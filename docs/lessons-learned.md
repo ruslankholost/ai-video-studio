@@ -6,9 +6,9 @@ Where a rule is a taste choice it says "default": the user may change it.
 
 ## Money and order
 1. **No paid generation without an explicit "yes" on the exact thing.** Before the yes, name the model, the number of jobs and the credits from Higgsfield's estimate. Quote credits, not dollars. A connected account or "I want to learn" is not permission to spend.
-2. **Order: story → preproduction (script, 3x3 storyboard, "ok") → reference images → previz → video.** Don't talk about video and credits until the story is approved.
+2. **Order: story → preproduction (script, 3x3 storyboard, "ok") → reference images → previz (only for a long take or a camera the prompt cannot hold) → video.** Don't talk about video and credits until the story is approved.
 3. **A weak idea must die before money is spent,** in preproduction or at the previz.
-4. **Generate only by the method.** Every price message carries the stage checklist with yes/no per item, and any move outside the method (another model, no previz, no prompt template) is called a deviation before the yes. A real case: all shots of a reel were made as separate 4-second clips from start frames only, without previz and with free-text prompts, to save credits. Cars didn't brake, people didn't turn, hits didn't land, and the cut looked like a slideshow. The credits were wasted.
+4. **Generate only by the method.** Every price message carries the stage checklist with yes/no per item, and any move outside the method (another model, no prompt template, no character cards, no previz where stage 05 calls for one) is called a deviation before the yes. A real case: all shots of a reel were made as separate 4-second clips on a cheaper model, from start frames only, with no character cards and free-text prompts, to save credits. Cars didn't brake, people didn't turn, hits didn't land, and the cut looked like a slideshow. The credits were wasted.
 5. **Upscale cheaply by default.** Generate drafts at 480p and upscale only the pieces that made the final cut. Use a local upscaler if the computer has a good GPU; paid upscaling only for a clip that needs it, with its own "yes".
 6. **One video, not a season.** If an idea has several heroes or situations, they all go into one video. Don't stretch one plot into a series.
 

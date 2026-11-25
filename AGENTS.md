@@ -30,7 +30,7 @@ The user's latest decision wins. When they change a rule, replace the old line i
 | 02 | Film language (reference) | `docs/stages/02-film-language.md` | used in 01, 04, 06 | none |
 | 03 | Characters and references | `docs/stages/03-characters-and-references.md` | `refs/` | faces and reference cards, before scenes |
 | 04 | Frames | `docs/stages/04-frames.md` | `frames/` | establishing shots and start frames |
-| 05 | Previz and camera | `docs/stages/05-previz-camera.md` | `previz/` | the previz: camera and timing |
+| 05 | Previz and camera (only for a long take without cuts or a camera the prompt failed to hold) | `docs/stages/05-previz-camera.md` | `previz/` | the previz: camera and timing |
 | 06 | Video | `docs/stages/06-video.md` | `video/`, `prompts.md` | 480p draft, then the final |
 | 07 | Sound and voice | `docs/stages/07-sound-voice.md` | `audio/` | character voices before the cut |
 | 08 | Post | `docs/stages/08-post.md` | `edit/`, `out/` | rough cut, then the final |
@@ -41,7 +41,7 @@ The user's latest decision wins. When they change a rule, replace the old line i
 ## Hard rules
 - **Money.** Nothing paid runs (image, video, voice, music, upscale) without the user's explicit "yes" on that exact thing. First name the model, the number of jobs and the credits from Higgsfield's `estimate_*_cost`, then wait. Connecting an account or saying "I want to learn" is not a yes to spend.
 - **Checklist with every price.** The message that asks for "yes" includes the current stage's "Workflow" and "Check before ok" items, each marked yes or no. Any move that is not the method (another model, no previz, no prompt template, fewer references) is named as a deviation before the "yes". Saving credits never justifies dropping the method.
-- **Order.** Story → preproduction (script and 3x3 storyboard, "ok") → references and frames → previz built on them → video at the very end. A weak idea must die in preproduction, before anything is spent. Don't talk about credits and video until the story is approved.
+- **Order.** Story → preproduction (script and 3x3 storyboard, "ok") → references and frames → previz, only when stage 05 calls for it → video at the very end. A weak idea must die in preproduction, before anything is spent. Don't talk about credits and video until the story is approved.
 - **Preproduction is half the result.** In production we invent nothing, we only execute. If you have to make things up during production, preproduction is not finished: go back (laws 1 and 5).
 - **References.** Every reference in a prompt has a written role: what we take from it and what we do NOT take. A face holds only through a reference image; text can't hold it (laws 12 and 15).
 - **Project.** One video = one folder = one session. Nothing is overwritten. Rejects go to `drafts/`. All prompts live in one `prompts.md` with only the current version in place (laws 38 and 39).

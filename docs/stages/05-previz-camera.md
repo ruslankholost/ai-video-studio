@@ -1,6 +1,12 @@
 # 05 Previz and camera
 
-The hardest thing to control in AI video is the camera: a prompt alone hardly holds it. So the video is first built as a simple 3D blockout with a camera (previz) in Blender, corrected with words for free, and the video model then receives a finished movement. The previz decides where the camera goes, where people and objects stand, which paths they walk and how fast. The images decide how everything looks. The prompt decides the acting and the details. This stage produces the previz video that stage 06 feeds to Seedance as `@Video1`.
+The hardest thing to control in AI video is the camera: a prompt alone hardly holds it for long. When that matters, the video is first built as a simple 3D blockout with a camera (previz) in Blender, corrected with words for free, and the video model then receives a finished movement. The previz decides where the camera goes, where people and objects stand, which paths they walk and how fast. The images decide how everything looks. The prompt decides the acting and the details. This stage produces the previz video that stage 06 feeds to Seedance as `@Video1`.
+
+**When this stage is needed.** Most AI videos are made without a previz: a strong start frame, the character cards and the template prompt with timecodes (stage 06) hold short shots with simple camera moves (static, slow push-in, pan, short tracking). Build a previz only in two cases:
+1. A long continuous take with no cuts, where one camera move carries the whole clip (for example a 25-30 s one-take through a building or around a car).
+2. A camera move the prompt failed to hold on the same shot twice in a row. Then build the previz for that shot only.
+
+The Blender link works with Seedance only. If neither case applies, skip this stage and write in `progress.md`: "05 skipped: no long take, no failed camera".
 
 ## Input and output
 
